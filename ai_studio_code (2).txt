@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copia dependências primeiro para aproveitar cache de build
+COPY package*.json ./
+RUN npm install --omit=dev
+
+# Copia o restante do projeto
+COPY . .
+
+# Garante que a pasta data exista para o admin e chaves criptografadas
+RUN mkdir -p /app/data
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

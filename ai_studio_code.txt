@@ -1,0 +1,10 @@
+greenscore/
+├── package.json
+├── server.js
+├── services/
+│   ├── apis.js
+│   └── analyzer.js
+└── public/
+    ├── index.html
+    ├── styles.css
+    └── app.js
